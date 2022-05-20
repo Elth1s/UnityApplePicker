@@ -7,7 +7,6 @@ public class HighScore : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("HighScore"))
         {
             score = PlayerPrefs.GetInt("HighScore");
