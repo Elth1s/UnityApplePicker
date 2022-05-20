@@ -8,4 +8,9 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("_Scene_0");
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
 }
