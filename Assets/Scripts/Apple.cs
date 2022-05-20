@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    public static float bottomY = -20f;
-
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (transform.position.y < bottomY)
+        GameObject collidedWith = collision.gameObject;
+        if (collidedWith.tag == "Terrain")
         {
-            Destroy(this.gameObject);
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 10;
 
             ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
 

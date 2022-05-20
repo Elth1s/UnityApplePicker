@@ -3,10 +3,11 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
-    static public int score = 1000;
+    static public int score = 0;
 
     void Awake()
     {
+        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("HighScore"))
         {
             score = PlayerPrefs.GetInt("HighScore");
